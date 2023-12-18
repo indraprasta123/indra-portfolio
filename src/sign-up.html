@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../public/style/main.css">
+    <title>Sign-Up</title>
+</head>
+<body>
+    <header class="sign-up_head">
+        <nav class="sign-up_head__nav">
+            <a href="../index.html" type="button" name="left-arrow" class="sign-up_head__back-button">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </a>
+        </nav>
+    </header>
+    <main class="p-sign_up animation">
+        <div class="p-sign_up__container">
+            <div class="p-sign_up__content">
+                <div class="p-sign_up__wrapper">
+                    <div class="p-sign_up__head">
+                        <h1 class="p-sign_up__head__title">Sign-up to Prasta.com</h1>
+                    </div>
+                    <div class="p-sign_up__ilustration">
+                        <div class="p-sign_up__ilustration__circle">
+                            <div class="p-sign_up__ilustration__circles"></div>
+                            <div class="p-sign_up__ilustration__circles"></div>
+                            <div class="p-sign_up__ilustration__circles"></div>
+                            <div class="p-sign_up__ilustration__circles"></div>
+                        </div>
+                    </div>
+                    <div class="p-sign_up__box">
+                        <form class="p-sign_up__form">
+                            <div class="p-sign_up__form__group">
+                                <label>Name</label>
+                                <input class="p-sign_up__form__control" type="text" name="name">
+                            </div>
+                            <div class="p-sign_up__form__group">
+                                <label>Username</label>
+                                <input class="p-sign_up__form__control" type="text" name="username">
+                            </div>
+                            <div class="p-sign_up__form__group">
+                                <label>Email</label>
+                                <input class="p-sign_up__form__control" type="text" name="email">
+                            </div>
+                            <div class="p-sign_up__form__group">
+                                <label>Password</label>
+                                <input class="p-sign_up__form__control" type="password" name="password">
+                            </div>
+                            <div class="p-sign_up__form__group">
+                                <input class="p-sign_up__form__btn" type="submit" name="submit" value="Send">
+                            </div>
+                        </form>
+                        <div class="p-sign_up__option">
+                            <div class="p-sign_up__option__item">
+                                <button type="button" name="google">
+                                    <i class="fa fa-google" aria-hidden="true"></i>
+                                    <p>Masuk dengan Google</p>
+                                </button>
+                                <button type="button" name="facebook" id="facebook">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    <p>Masuk dengan Facebook</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-sign_up__notes">
+                            <p class="p-sign_up__notes__txt">Dengan menekan salah satu opsi berarti kamu setuju dengan 
+                            <button type="button">Ketentuan Layanan</button> dan <button type="button">Kebijakan Privasi</button> Prasta.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const elementsHome = document.querySelectorAll('.animation');
+
+        let options = {
+          root: null,
+        }
+        const callbacks = (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting){
+              entry.target.classList.add('animated');
+            }
+          });
+        }
+        const observerHome = new IntersectionObserver(callbacks, options);
+        elementsHome.forEach(item => {
+          observerHome.observe(item);
+        });
+    </script>
+</body>
+</html>

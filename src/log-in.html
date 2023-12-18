@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../public/style/main.css">
+    <title>Log-in Page</title>
+</head>
+<body>
+    <header class="login-header">
+        <nav class="login-header__nav">
+            <a href="../index.html" type="button" name="left-arrow" class="login-header__back-button">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </a>
+        </nav>
+    </header>
+    <main class="p-login animation">
+        <div class="p-login__container">
+            <div class="p-login__content">
+                <div class="p-login__wrapper">
+                    <div class="p-login__head">
+                        <h1 class="p-login__head__title">Login to Prasta.com</h1>
+                    </div>
+                    <div class="p-login__ilustration">
+                        <div class="p-login__ilustration__circle">
+                            <div class="p-login__ilustration__circles"></div>
+                            <div class="p-login__ilustration__circles"></div>
+                            <div class="p-login__ilustration__circles"></div>
+                            <div class="p-login__ilustration__circles"></div>
+                        </div>
+                    </div>
+                    <div class="p-login__box">
+                        <form class="p-login__form">
+                            <div class="p-login__form__group">
+                                <label>Username</label>
+                                <input class="p-login__form__control" type="text" name="username">
+                            </div>
+                            <div class="p-login__form__group">
+                                <label>Password</label>
+                                <input class="p-login__form__control" type="password" name="password">
+                            </div>
+                            <div class="p-login__form__group">
+                                <div class="p-login__form__row">
+                                    <a href="" class="p-login__form__link">Forget Pasword?</a>
+                                    <input type="submit" value="Log in" name="submit">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="p-login__option">
+                            <div class="p-login__option__item">
+                                <button type="button" name="google">
+                                    <i class="fa fa-google" aria-hidden="true"></i>
+                                    <p>Masuk dengan Google</p>
+                                </button>
+                                <button type="button" name="facebook" id="facebook">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    <p>Masuk dengan Facebook</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-login__notes">
+                            <p class="p-login__notes__txt">Dengan menekan salah satu opsi berarti kamu setuju dengan 
+                            <button type="button">Ketentuan Layanan</button> dan <button type="button">Kebijakan Privasi</button> Prasta.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const elementsHome = document.querySelectorAll('.animation');
+
+        let options = {
+          root: null,
+        }
+        const callbacks = (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting){
+              entry.target.classList.add('animated');
+            }
+          });
+        }
+      
+        const observerHome = new IntersectionObserver(callbacks, options);
+        elementsHome.forEach(item => {
+          observerHome.observe(item);
+        });
+    </script>
+</body>
+</html>

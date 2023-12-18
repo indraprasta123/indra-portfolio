@@ -1,0 +1,69 @@
+//variable: color
+
+
+$colors: (
+  black: #000,
+  white: #fff,
+  primary: (
+    25: #d2f5ff,
+    50: #6bdeff,
+    75: #34cef9,
+    100: #00bcf1,
+    125: #0397c9,
+  ),
+  grey: (
+    25: #caf6ff,
+    50: #b8c1cb,
+    75: #6a7481,
+    100: #1f2d3d,
+    125: #0c1219,
+  ),
+  orange: (
+    25: #f58020,
+    50: #ffa960,
+    75: #fb9743,
+    100: #f48120,
+    125: #da6014,
+  ),
+  green: (
+    25: #77b341,
+    50: #28903b,
+    75: #578b2d,
+    100: #1f732e,
+  ),
+  yellow: (
+    25: #fdb427,
+    50: #dfa100,
+  ),
+  purple: (
+    25: #9f78cb,
+    50: #79589e,
+    75: #2e3092,
+  ),
+  cyan: (
+    25: #00bcf1,
+  ),
+  bg-color: #f0f2f9,
+  overlay: rgba(#000, 0.75),
+  border: (
+    25: #efefef,
+    50: #dde2e8,
+  ),
+  system: (
+    success: #2ecc71,
+    danger: #af183c,
+    warning: #f1c40f,
+    disabled: #b8c1cb,
+    info: #95a5a6,
+    error: #e74c3c,
+  ),
+  social-media: (
+    facebook: #475993,
+    twitter: #1da1f2,
+    instagram: #405de6,
+    whatsapp: #25d366,
+    youtube: #ff0000,
+    spotify: #1db954,
+  ),
+  // bg-popup: rgba(#0c1219, 0.85),
+);

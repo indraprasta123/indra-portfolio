@@ -1,0 +1,199 @@
+.footer {
+    background-color: #240280;
+    &__wrapper {
+        padding: 20px 40px;
+    }
+    &__header {
+        display: flex;
+        justify-content: center;
+        color: white;
+        padding-top: 40px;
+        align-items: flex-end;
+        &__title {
+            width: 200px;
+            margin-right: 30px;
+        }
+        &__desc {
+            margin-bottom: 30px;
+        }
+        &__txt {
+            width: 320px;
+        }
+        &__link {
+            background-color: #eb6d07;
+            border: 1px solid #eb6d07;
+            padding: 12px 25px;
+            border-radius: 20px;
+            display: flex;
+            width: 80px;
+            color: white;
+            transition: 0.4s ease-in;
+            &:hover {
+                background-color: white;
+                color: #eb6d07;
+                transition: 0.4s ease-out;
+            }
+        }
+    }
+    &__nav-bar {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        margin-top: 70px;
+        align-items: center;
+        img {
+            width: 65px;
+        }
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            list-style: none;
+        }
+        &__link {
+            color: white;
+            text-decoration: none;
+        }
+        &__sosmed {
+            display: flex;
+            i {
+                width: 25px;
+                height: 25px;
+                background-color: white;
+                color: #240280;
+                border-radius: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 15px;
+                transition: 0.2s ease-in;
+            }
+            .fa-facebook:hover {
+                background-color: #240280;
+                border: 1px solid white;
+                color: white;
+                transition: 0.2s ease-in;
+            }
+            .fa-instagram:hover {
+                color: white;
+                background: #f09433;
+                transition: 0.2s ease-in;
+                background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+                background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+                background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+            }
+            .fa-whatsapp:hover {
+                color: white;
+                background-color: #24cc63;
+                transition: 0.2s ease-in;
+            }
+        }
+    }
+    &__information {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        &__title {
+            color: white;
+            text-align: center;
+        }
+        &__row {
+            display: flex;
+            gap: 20px;
+        }
+        &__card {
+            background-color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: all 1s ease;
+            transition-delay: 0s;
+            .animated & {
+                opacity: 1;
+                transform: none;
+                @for $i from 1 through 12 {
+                    $delay: 240 + ($i * 100) + ms;
+                    &:nth-child(#{$i}) {
+                      transition-delay: $delay;
+                    }
+                  }
+            }
+        }
+        &__image {
+            padding: 4px;
+            img {
+                width: 100%;
+                border-radius: 20px;
+            }
+        }
+        &__coloum {
+            padding: 12px;
+            span {
+                display: flex;
+                justify-content: space-between;
+            }
+            h4 {
+                margin: 0;
+            }
+        }
+        &__desc {
+            margin: 0;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .footer {
+        &__header {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            &__title {
+                width: 100%;
+                margin: 0;
+            }
+            &__link {
+                margin: 0 auto;
+            }
+            &__txt {
+                width: 100%;
+            }
+        }
+        &__nav-bar {
+            padding: 0;
+            img {
+                width: 45px;
+            }
+            &__menu {
+                display: none;
+            }
+        }
+        &__information {
+            &__row {
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+            }
+            &__coloum {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            &__card {
+                margin: 0;
+                max-width: 80%;
+            }
+        }
+        &__wrapper {
+            padding: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 575.86px) {
+    .footer__information__card {
+        max-width: 100%;
+    }
+}

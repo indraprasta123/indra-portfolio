@@ -1,0 +1,99 @@
+.piooners {
+    margin-bottom: 5rem;
+    &__wrapper {
+        padding: 50px 40px;
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(16px);
+        transition: all 1s ease;
+        transition-delay: 0s;
+        .animated & {
+            opacity: 1;
+            transition: all 1s ease-out;
+            transition-delay: 0.2s;
+            transform: none;
+        }
+        &__link {
+            background-color: #eb6d07;
+            border: 1px solid #eb6d07;
+            height: fit-content;
+            padding: 12px 25px;
+            border-radius: 20px;
+            color: white;
+            transition: 0.4s ease-in;
+            &:hover {
+                background-color: white;
+                color: #eb6d07;
+                transition: 0.4s ease-out;
+                border: 1px solid #eb6d07;
+            }
+        }
+    }
+    &__content {
+        display: flex;
+        padding-top: 40px;
+        &__box {
+            background-color: #f7f9ff;
+            padding: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: 0.5s ease;
+            transition-delay: 0s;
+            .animated & {
+                opacity: 1;
+                transform: none;
+                @for $i from 1 through 12 {
+                    $delay: 240 + ($i * 100) + ms;
+                    &:nth-child(#{$i}) {
+                      transition-delay: $delay;
+                    }
+                  }
+            }
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 2px 4px 10px 0px #0c0c0b1f;
+                transition: 0.5s ease;
+                transition-delay: 0s;
+                background-color: white;
+            }
+        }
+        &__font {
+            background-color: white;
+            width: 60px;
+            display: flex;
+            height: 60px;
+            border-radius: 50px;
+            justify-content: center;
+            align-items: center;
+            i {
+                font-size: 30px;
+                color: #240280;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 575.86px) {
+    .piooners {
+        &__header {
+            flex-direction: column;
+            &__link {
+                margin-top: 20px;
+            }
+        }
+        &__content {
+            flex-direction: column;
+            margin-top: 20px;
+            &__box {
+                margin-top: 1rem;
+                margin-right: 0;
+            }
+        }
+    }
+}
